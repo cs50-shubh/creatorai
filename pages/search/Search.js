@@ -50,7 +50,6 @@ const Search = (props) => {
                 value={text}
                 onChange={(t)=>settext(t.target.value)}
                 onKeyDown={(e)=>{
-                  console.log(e)
                   if(e.keyCode === 13) {
                     getImages()
                   }
