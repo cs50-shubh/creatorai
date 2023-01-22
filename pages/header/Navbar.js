@@ -15,9 +15,14 @@ const Navbar = () => {
 const styles = {
   container: {
     alignItems: 'center', 
+    position: 'fixed',
+    flex:1,
+    width: '100%',
+    backgroundColor: 'white',
     padding: '20px 20px',
     display: 'flex', 
-    justifyContent: 'space-between'
+    justifyContent: 'space-between',
+    boxShadow: '5px 2px 12px rgba(171, 171, 246, 0.2)'
   },
   navbtn: {
     padding: '10px 40px',

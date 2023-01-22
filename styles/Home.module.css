@@ -1,8 +1,6 @@
 .container {
-  padding: 0 0.5rem;
   display: flex;
   flex-direction: column;
-  box-shadow: 5px 5px 12px 1px rgba(171, 171, 246, 0.2);
 }
 
 .title a {
@@ -42,7 +40,6 @@
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-
   max-width: 800px;
   margin-top: 3rem;
 }
@@ -79,6 +76,10 @@
 
 .logo {
   height: 1em;
+}
+
+.body {
+  padding: 20px 20px;
 }
 
 @media (max-width: 600px) {

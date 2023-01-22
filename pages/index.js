@@ -2,15 +2,21 @@ import Head from 'next/head'
 import Link from 'next/link';
 import styles from '../styles/Home.module.css';
 import Navbar from './header/Navbar';
+import Search from './search/Search';
 
 export default function Home() {
+
+
   return (
     <div className={styles.container}>
       <Head>
-        <title>Create Next Navbar</title>
-        <link rel="icon" href="/favicon.ico" />
+        <title>Creator AI | Build crazy AI art</title>
+        <link rel="icon" href="/logo-no-background.png" />
       </Head>
       <Navbar />
+      <div className={styles.body}>
+        <Search />
+      </div>
 
       {/* <style jsx>{`
         main {
@@ -53,6 +59,9 @@ export default function Home() {
           font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
             Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
             sans-serif;
+        }
+        ::placeholder {
+          color: #bcb7b7;
         }
         * {
           box-sizing: border-box;
