@@ -7,7 +7,7 @@ const Search = (props) => {
     const [text, settext] = useState('')
     const [data, setdata] = useState(null)
     const [loading, setloading] = useState(false)
-
+console.log('env',process.env.API_KEY,process.env)
     const callService = async (text)=>{
         const headers = {
             'Content-Type': 'application/json',
