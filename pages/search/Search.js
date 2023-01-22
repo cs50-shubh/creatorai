@@ -1,14 +1,36 @@
 import React, { useState } from 'react'
 import styles from '../../styles/Search.module.css'
 import Results from './Results'
-import { callService } from './services'
 import { BeatLoader } from 'react-spinners';
 
 const Search = (props) => {
     const [text, settext] = useState('')
     const [data, setdata] = useState(null)
     const [loading, setloading] = useState(false)
+
+    const callService = async (text)=>{
+        const headers = {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${process.env.API_KEY}`,
+            // 'Content-Type': 'application/x-www-form-urlencoded',
+        }
+        const response = await fetch('https://api.openai.com/v1/images/generations',{
+            headers: headers,
+            method: 'POST',
+            body: JSON.stringify({
+                "prompt": text,
+                "n": 10,
+                "size": "1024x1024"
+            })
+        }).then(res=>{
+            return res.json()
+        }).catch(e=>console.error(e))
     
+        console.log('final',response)
+        return response
+    }
+
+
     const getImages = async ()=>{
       if(text.length>0){
         setloading(true)
