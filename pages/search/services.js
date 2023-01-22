@@ -1,4 +1,4 @@
-export async function callService(text){
+async function callService(text){
     const headers = {
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${process.env.API_KEY}`,
@@ -19,3 +19,5 @@ export async function callService(text){
     console.log('final',response)
     return response
 }
+
+export default callService;
