@@ -80,6 +80,11 @@ jobs:
         uses: actions/upload-pages-artifact@v1
         with:
           path: ./out
+      - name: 'Create env file'
+        run: |
+          touch .env
+          echo API_KEY="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" >> .env
+          cat .env
 
   # Deployment job
   deploy:
