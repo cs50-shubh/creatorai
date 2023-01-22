@@ -7,8 +7,8 @@ const Search = (props) => {
     const [text, settext] = useState('')
     const [data, setdata] = useState(null)
     const [loading, setloading] = useState(false)
-console.log('env',process.env.API_KEY,process.env)
-    const callService = async (text)=>{
+    
+    const callService = async (val)=>{
         const headers = {
             'Content-Type': 'application/json',
             'Authorization': `Bearer ${process.env.API_KEY}`,
@@ -18,7 +18,7 @@ console.log('env',process.env.API_KEY,process.env)
             headers: headers,
             method: 'POST',
             body: JSON.stringify({
-                "prompt": text,
+                "prompt": val,
                 "n": 10,
                 "size": "1024x1024"
             })
