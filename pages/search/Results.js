@@ -13,7 +13,7 @@ const Results = (props) => {
   return (
     <div className={styles.results}>
         <div style={{marginBottom: 20}}>Results</div>
-        {props?.data.map((i,id)=>{
+        {props?.data?.map((i,id)=>{
             return(
                 <ListItem 
                     key={id}
