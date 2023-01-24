@@ -11,16 +11,13 @@ const Search = (props) => {
     const callService = async (val)=>{
         const headers = {
             'Content-Type': 'application/json',
-            'Authorization': `Bearer ${process.env.API_KEY}`,
             // 'Content-Type': 'application/x-www-form-urlencoded',
         }
-        const response = await fetch('https://api.openai.com/v1/images/generations',{
+        const response = await fetch('http://13.235.75.216:3000/',{
             headers: headers,
             method: 'POST',
             body: JSON.stringify({
-                "prompt": val,
-                "n": 10,
-                "size": "1024x1024"
+              "prompt": val,
             })
         }).then(res=>{
             return res.json()
